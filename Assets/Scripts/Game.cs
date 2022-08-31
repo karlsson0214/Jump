@@ -15,13 +15,23 @@ public class Game : MonoBehaviour
 
         // floor
         Instantiate(brickPrefab, new Vector3(xCenter, y, 0), Quaternion.identity);
+
         while (deltaX < 9)
         {
             // to the right of center
             Instantiate(brickPrefab, new Vector3(xCenter + deltaX, y, 0), Quaternion.identity);
             // to the left of center
             Instantiate(brickPrefab, new Vector3(xCenter - deltaX, y, 0), Quaternion.identity);
+
+
             deltaX += brickWidth;           
+        }
+        deltaX = 3;
+        y = -2;
+        while (deltaX < 9)
+        {
+            Instantiate(brickPrefab, new Vector3(xCenter + deltaX, y, 0),Quaternion.identity);
+            deltaX += brickWidth;
         }
         
     }
