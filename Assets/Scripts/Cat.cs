@@ -41,8 +41,10 @@ public class Cat : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // collision with brick
         if (collision.collider.gameObject.name.StartsWith("Brick"))
         {
+            // Cat is above the brick.
             if(collision.collider.transform.position.y < rb.position.y - halfCatHeight)
             {
                 onGround = true;
@@ -52,8 +54,10 @@ public class Cat : MonoBehaviour
     // not enough with OnCollisionEnter2D. OnCollisionStay2D needed to set onGround properly.
     private void OnCollisionStay2D(Collision2D collision)
     {
+        // collision with brick
         if (collision.collider.gameObject.name.StartsWith("Brick"))
         {
+            // Cat is above the brick.
             if (collision.collider.transform.position.y < rb.position.y - halfCatHeight)
             {
                 onGround = true;
@@ -62,8 +66,10 @@ public class Cat : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
+        // collision with brick
         if (collision.collider.gameObject.name.StartsWith("Brick"))
         {
+            // Cat is above the brick.
             if (collision.collider.transform.position.y < rb.position.y - halfCatHeight)
             {
                 onGround = false;
